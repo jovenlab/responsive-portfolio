@@ -44,7 +44,7 @@ const About = ({isDarkMode}) => {
             transition={{duration: 0.6, delay: 0.8}}
             className='flex-1'>
                 <p className='mb-10 max-w-2xl font-ovo'>
-                    I'm a dedicated web developer with experience in building and launching fullstack applications, 
+                    I am  a dedicated web developer with experience in building and launching fullstack applications, 
                     particularly for startup projects where adaptability and innovation are key. 
                     From crafting intuitive user interfaces to developing robust backend systems, 
                     I take pride in transforming ideas into impactful, scalable digital solutions that are both functional and user-centric.

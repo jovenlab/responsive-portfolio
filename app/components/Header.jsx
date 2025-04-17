@@ -21,7 +21,7 @@ const Header = () => {
         whileInView={{y: 0, opacity: 1}}
         transition={{duration: 0.6, delay:0.3}}
         className='flex items-end gap-2 text-xl md:text-2xl mb-3 font-ovo'>
-                Hi! I'm Joven Labiste <Image src={assets.hand_icon} alt=""
+                Hi! I am Joven Labiste <Image src={assets.hand_icon} alt=""
             className='rounded-full w-6'/>
         </motion.h3>
         
