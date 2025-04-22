@@ -1,33 +1,45 @@
+'use client'
 import { assets } from '@/assets/assets'
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Image from 'next/image'
 import { motion } from "motion/react"
+import HCaptcha from '@hcaptcha/react-hcaptcha'
 
 const Contact = () => {
-    const [result, setResult] = useState("");
+  const [result, setResult] = useState("");
+  const [captchaToken, setCaptchaToken] = useState(null);
+  const captchaRef = useRef();
 
-    const onSubmit = async (event) => {
+  const onSubmit = async (event) => {
       event.preventDefault();
+
+      if (!captchaToken) {
+          setResult("Please verify you're human!");
+          return;
+      }
+
       setResult("Sending....");
       const formData = new FormData(event.target);
-  
       formData.append("access_key", "a3c1018b-f6fa-46a2-83e1-1cf098b94a49");
-  
+      formData.append("h-captcha-response", captchaToken); // This is important
+
       const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
+          method: "POST",
+          body: formData
       });
-  
+
       const data = await response.json();
-  
+
       if (data.success) {
-        setResult("Form Submitted Successfully");
-        event.target.reset();
+          setResult("Form Submitted Successfully");
+          event.target.reset();
+          setCaptchaToken(null);
+          captchaRef.current.resetCaptcha();
       } else {
-        console.log("Error", data);
-        setResult(data.message);
+          console.log("Error", data);
+          setResult(data.message);
       }
-    };
+  };
 
 
   return (
@@ -87,6 +99,15 @@ const Contact = () => {
             className='w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-darkHover/30 dark:border-white/90' name="message">
 
             </motion.textarea>
+
+            {/* hCaptcha Widget */}
+            <div className="mb-4 flex justify-center">
+              <HCaptcha
+              sitekey="4d869f06-4c4e-451e-b196-104abe16b156"
+              onVerify={token => setCaptchaToken(token)}
+              ref={captchaRef}
+              />
+            </div>
 
             <motion.button 
             whileHover={{scale: 1.05}}
