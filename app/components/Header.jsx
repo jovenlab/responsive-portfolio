@@ -37,7 +37,7 @@ const Header = () => {
         whileInView={{opacity: 1}}
         transition={{duration: 0.6, delay:0.7}}
         className='max-w-2xl mx-auto font-ovo'>
-            "I am a frontend developer from Cebu City focused on creating responsive and user-friendly websites using HTML, CSS, and JavaScript.
+            I am a frontend developer from Cebu City focused on creating responsive and user-friendly websites using HTML, CSS, and JavaScript.
              I am passionate about learning new technologies and improving my skills to deliver high-quality work.
         </motion.p>
 
