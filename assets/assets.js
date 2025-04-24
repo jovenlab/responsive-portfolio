@@ -79,24 +79,24 @@ export const assets = {
 
 export const workData = [
     {
-        title: 'Frontend Project',
+        title: 'FASO Gallery',
         description: 'Web Design',
-        bgImage: '/work-1.png',
+        bgImage: '/faso_blue.png',
     },
     {
-        title: 'Geo based app',
-        description: 'Mobile App',
-        bgImage: '/work-2.png',
-    },
-    {
-        title: 'Photography site',
-        description: 'Web Design',
-        bgImage: '/work-3.png',
-    },
-    {
-        title: 'UI/UX designing',
+        title: 'PISTA GO',
         description: 'UI/UX Design',
-        bgImage: '/work-4.png',
+        bgImage: '/pista_pink.png',
+    },
+    {
+        title: 'SPORTAL',
+        description: 'Mobile App',
+        bgImage: '/sportal_yellow.png',
+    },
+    {
+        title: 'Dungeon Descend',
+        description: 'Graphics Design',
+        bgImage: '/dungeon_green.png',
     },
 ]
 
@@ -105,7 +105,7 @@ export const serviceData = [
     { icon: assets.mobile_icon, title: 'Mobile app', description: 'Mobile app development involves creating software...', link: '' },
     { icon: assets.ui_icon, title: 'UI/UX design', description: 'UI/UX design focuses on creating a seamless user...', link: '' },
     { icon: assets.graphics_icon, title: 'Graphics design', description: 'Creative design solutions to enhance visual communication...', link: '' },
-    { icon: assets.web_icon, title: 'Frontend development', description: 'Building responsive, interactive UIs with modern frameworks...', link: '' }
+    // { icon: assets.web_icon, title: 'Frontend development', description: 'Building responsive, interactive UIs with modern frameworks...', link: '' }
 ]
 
 export const infoList = [
